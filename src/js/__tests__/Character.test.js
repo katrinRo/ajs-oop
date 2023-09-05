@@ -9,7 +9,7 @@ test('create user', () => {
     level: 1,
     attack: 10,
     defence: 35,
-  })
+  });
 });
 
 test('levelUp', () => {
@@ -22,7 +22,7 @@ test('levelUp', () => {
     level: 2,
     attack: 12,
     defence: 42,
-  })
+  });
 });
 
 test('damage', () => {
@@ -35,7 +35,7 @@ test('damage', () => {
     level: 1,
     attack: 40,
     defence: 20,
-  })
+  });
 });
 
 test('incorrect type', () => {
@@ -71,5 +71,5 @@ test('damage null', () => {
     level: 1,
     attack: 20,
     defence: 40,
-  })
+  });
 });

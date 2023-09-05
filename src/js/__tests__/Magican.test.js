@@ -1,7 +1,7 @@
-import Magician from "../Magician";
+import Magician from '../Magician';
 
 test('creat Magician', () => {
-  const res = new Magician("Magician");
+  const res = new Magician('Magician');
 
   expect(res).toEqual({
     name: 'Magician',
@@ -10,5 +10,5 @@ test('creat Magician', () => {
     level: 1,
     attack: 10,
     defence: 40,
-  })
-})
+  });
+});
