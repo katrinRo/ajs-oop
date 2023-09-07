@@ -1,7 +1,7 @@
-import Swordsman from "../Swordsman";
+import Swordsman from '../Swordsman';
 
 test('creat Swordsman', () => {
-  const res = new Swordsman("Swordsman");
+  const res = new Swordsman('Swordsman');
 
   expect(res).toEqual({
     name: 'Swordsman',
@@ -10,5 +10,5 @@ test('creat Swordsman', () => {
     level: 1,
     attack: 40,
     defence: 10,
-  })
-})
+  });
+});
