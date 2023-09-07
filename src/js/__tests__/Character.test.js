@@ -1,7 +1,9 @@
 import Character from '../Character';
 
 test('create user', () => {
-  const res = new Character('Leo', 'Daemon', 10, 35);
+  const res = new Character('Leo', 'Daemon');
+  res.attack = 10;
+  res.defence = 35;
   expect(res).toEqual({
     name: 'Leo',
     type: 'Daemon',
@@ -13,7 +15,9 @@ test('create user', () => {
 });
 
 test('levelUp', () => {
-  const res = new Character('Leo', 'Daemon', 10, 35);
+  const res = new Character('Leo', 'Daemon');
+  res.attack = 10;
+  res.defence = 35;
   res.levelUp();
   expect(res).toEqual({
     name: 'Leo',
@@ -26,7 +30,9 @@ test('levelUp', () => {
 });
 
 test('damage', () => {
-  const res = new Character('Glen', 'Zombie', 40, 20);
+  const res = new Character('Glen', 'Zombie');
+  res.attack = 40;
+  res.defence = 20;
   res.damage(15);
   expect(res).toEqual({
     name: 'Glen',
@@ -39,29 +45,43 @@ test('damage', () => {
 });
 
 test('incorrect type', () => {
-  const res = new Character('Mikl', 'Daem', 40, 25);
-  expect(res).toThrow('Некорректный тип');
+  expect(() => {
+    const res = new Character('Mikl', 'Daem');
+    res.attack = 40;
+    res.defence = 25;
+  }).toThrow('Некорректный тип');
 });
 
 test('incorrect type name', () => {
-  const res = new Character(1, 'Bowerman', 15, 40);
-  expect(res).toThrow('Некорректное имя');
+  expect(() => {
+    const res = new Character(1, 'Bowerman');
+    res.attack = 15;
+    res.defence = 40;
+  }).toThrow('Некорректное имя');
 });
 
 test('incorrect name', () => {
-  const res = new Character('L', 'Daemon', 20, 20);
-  expect(res).toThrow('Некорректное имя');
+  expect(() => {
+    const res = new Character('L', 'Daemon');
+    res.attack = 20;
+    res.defence = 20;
+  }).toThrow('Некорректное имя');
 });
 
 test('incorrect levelUp', () => {
-  const res = new Character('Kleo', 'Magician', 10, 40);
-  res.health = 0;
-  res.levelUp();
-  expect(res).toThrow('Нельзя повысить левел умершего :(');
+  expect(() => {
+    const res = new Character('Kleo', 'Magician');
+    res.attack = 10;
+    res.defence = 40;
+    res.health = 0;
+    res.levelUp();
+  }).toThrow('Нельзя повысить левел умершего :(');
 });
 
 test('damage null', () => {
-  const res = new Character('Peli', 'Zombie', 20, 40);
+  const res = new Character('Peli', 'Zombie');
+  res.attack = 20;
+  res.defence = 40;
   res.health = 0;
   res.damage(10);
   expect(res).toEqual({

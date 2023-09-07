@@ -1,7 +1,7 @@
-import Daemon from '../Daemon';
+import Daemon from "../Daemon";
 
 test('creat Daemon', () => {
-  const res = new Daemon('Daemon');
+  const res = new Daemon("Daemon");
 
   expect(res).toEqual({
     name: 'Daemon',
@@ -10,5 +10,5 @@ test('creat Daemon', () => {
     level: 1,
     attack: 10,
     defence: 40,
-  });
-});
+  })
+})

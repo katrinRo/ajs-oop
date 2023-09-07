@@ -1,7 +1,7 @@
-import Bowerman from '../Bowerman';
+import Bowerman from "../Bowerman";
 
 test('creat Bowerman', () => {
-  const res = new Bowerman('Bowerman');
+  const res = new Bowerman("Bowerman");
 
   expect(res).toEqual({
     name: 'Bowerman',
@@ -10,5 +10,5 @@ test('creat Bowerman', () => {
     level: 1,
     attack: 25,
     defence: 25,
-  });
-});
+  })
+})
